@@ -1,0 +1,28 @@
+/*Suponha que uma pessoa pode se aposentar se: Tiver no mínimo 65 anos de idade; Tiver contribuído por no mínimo 30 anos para o INSS; 
+Tiver no mínimo 60 anos de idade e tiver contribuído por no mínimo 25 anos para o INSS.
+Escreva um programa que receba o ano atual, o ano de nascimento do empregado e o ano em que
+ele começou a contribuir para o INSS (supondo que a contribuição foi ininterrupta). O programa deve
+escrever a idade do empregado ao final do ano atual, e dizer se ele poderá ou não se aposentar até lá.*/
+
+#include<stdio.h>
+
+int main()
+{
+    int ano_atual, ano_nasc, ano_contrib;
+    scanf("%d %d %d", &ano_atual, &ano_nasc, &ano_contrib);
+
+    int idade = ano_atual-ano_nasc;
+    int contribuicao = ano_atual-ano_contrib;
+
+    printf("Idade ao final do ano atual: %d \n", idade);
+
+    if (!(idade>=65 || contribuicao>=30 || (idade>=60 && contribuicao>=25)))
+    {
+        printf("NAO ");
+    }
+
+    printf("PODERAH SE APOSENTAR.\n");
+
+
+    return 0;
+}
