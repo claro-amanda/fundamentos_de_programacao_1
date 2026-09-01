@@ -1,0 +1,46 @@
+/*a) Escreva um programa que leia a hora inicial e a hora final de um jogo (apenas a hora, sem os
+minutos, com valor entre 0 e 23). A seguir, calcule a duração do jogo, sabendo que o mesmo pode
+começar em um dia e terminar em outro, tendo uma duração mínima de 1 hora e máxima de 24 horas.
+Considere que as entradas informadas são sempre válidas.
+
+#include <stdio.h>
+
+int main()
+{
+    int hora_inicio, hora_fim;
+    scanf("%d %d", &hora_inicio, &hora_fim);
+
+    int duracao = hora_fim - hora_inicio;
+
+    if (duracao<=0)
+    {   duracao = duracao+24;
+    }
+
+    printf("O jogo durou %d hora(s)", duracao);
+
+    return 0;
+}*/
+
+/*b) depois que esta parte inicial funcionar e você tiver terminado a lista
+inteira, altere o programa de forma a considerar também os minutos.*/
+
+#include <stdio.h>
+
+int main()
+{
+    int hora_inicio, min_inicio, hora_fim, min_fim;
+    scanf("%d %d %d %d", &hora_inicio, &min_inicio, &hora_fim, &min_fim);
+
+    min_inicio = min_inicio + hora_inicio*60;
+    min_fim = min_fim + hora_fim*60;
+
+    if (min_inicio>=min_fim)
+    {   min_fim = min_fim+1440;
+    }
+
+    int duracao = min_fim - min_inicio;
+
+    printf("O jogo durou %d hora(s) e %d minuto(s). \n", duracao/60, duracao%60);
+
+    return 0;
+}
