@@ -1,0 +1,23 @@
+/*Escreva um programa que recebe a data de nascimento de uma pessoa e a data atual (no
+formato dd/mm/aaaa), calcule e apresente a idade da pessoa.*/
+
+#include <stdio.h>
+
+int main()
+{
+    int dia_nasc, mes_nasc, ano_nasc;
+    scanf("%d/%d/%d", &dia_nasc, &mes_nasc, &ano_nasc);
+    int dia_atual, mes_atual, ano_atual;
+    scanf("%d/%d/%d", &dia_atual, &mes_atual, &ano_atual);
+
+    if (mes_nasc>mes_atual || (mes_nasc==mes_atual && dia_nasc>dia_atual))
+    {
+        ano_atual = ano_atual-1;
+    }
+
+    int idade = ano_atual-ano_nasc;
+
+    printf("\nSua idade eh %d ano(s).\n");
+
+    return 0;
+}
