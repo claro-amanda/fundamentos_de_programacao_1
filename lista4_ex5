@@ -1,0 +1,35 @@
+/*Escreva um programa que recebe 3 valores e verifica se eles podem ser os comprimentos dos
+lados de um triângulo. Em caso positivo, escrever uma mensagem informando se é um triângulo
+isósceles, equilátero ou escaleno. Obs.: o comprimento de um lado do triângulo é sempre menor do
+que a soma dos outros dois.*/
+
+#include <stdio.h>
+
+int main()
+{
+    int ladoA, ladoB, ladoC;
+    printf("Insira 3 numeros: \n");
+    scanf("%d %d %d", &ladoA, &ladoB, &ladoC);
+
+    if (ladoA<ladoB+ladoC && ladoB<ladoA+ladoC && ladoC<ladoA+ladoB)
+    {
+        printf("Eh um triangulo ");
+        if((ladoA==ladoB && ladoA!=ladoC) || (ladoA==ladoC && ladoA!=ladoB) || (ladoB==ladoC && ladoB!=ladoA))
+        {
+            printf("isoceles. ");
+        }
+        else if(ladoA==ladoB && ladoA==ladoC)
+        {
+            printf("equilatero. ");
+        }
+        else if(ladoA!=ladoB && ladoA!=ladoC && ladoB!=ladoC)
+        {
+            printf("escaleno. ");
+        }
+
+    }
+    else
+        printf("Nao eh um triangulo. ");
+
+    return 0;
+}
