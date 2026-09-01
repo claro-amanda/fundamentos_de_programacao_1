@@ -1,0 +1,48 @@
+/*Suponha que você está programando um módulo contador de cédulas para caixas eletrônicos.
+Escreva um programa que informa com quantas cédulas de Real podemos representar um dado valor,
+considerando que existem cédulas de 1, 2, 5, 10, 20, 50 e 100 Reais. Exemplo de resposta: R$ 218 =
+2 cédulas de 100, 1 cédula de 10, 1 cédula de 5, 1 cédula de 2 e 1 cédula de 1. O número de cédulas
+usadas deve ser o menor possível. Desconsidere valores com centavos, e suponha que a máquina
+sempre tem disponíveis as cédulas necessárias.*/
+
+#include <stdio.h>
+
+int main()
+{
+    int valor;
+    printf("Valor em R$: ");
+    scanf("%d", &valor);
+
+    int ced_cem=valor/100,
+        ced_cinqu=(valor%100)/50,
+        ced_vinte=((valor%100)%50)/20,
+        ced_dez=(((valor%100)%50)%20)/10,
+        ced_cinco=((((valor%100)%50)%20)%10)/5,
+        ced_dois=(((((valor%100)%50)%20)%10)%5)/2,
+        ced_um=(((((valor%100)%50)%20)%10)%5)%2;
+
+    if(ced_cem)
+        printf("%d cedula(s) de 100", ced_cem);
+
+    if(ced_cinqu)
+        printf(", %d cedula(s) de 50", ced_cinqu);
+
+    if(ced_vinte)
+        printf(", %d cedula(s) de 20", ced_vinte);
+
+    if(ced_dez)
+        printf(", %d cedula(s) de 10", ced_dez);
+
+    if(ced_cinco)
+        printf(", %d cedula(s) de 5", ced_cinco);
+
+    if(ced_dois)
+        printf(", %d cedula(s) de 2", ced_dois);
+
+    if(ced_um)
+        printf(" e %d cedula(s) de 1.", ced_um);
+    else
+        printf(".");
+
+    return 0;
+}
