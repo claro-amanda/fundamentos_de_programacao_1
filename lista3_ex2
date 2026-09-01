@@ -1,0 +1,22 @@
+/*2. Escreva um programa que atribua um número entre 100 e 999 a uma variável e o imprima
+invertido, na ordem UDC (Unidade Dezena Centena) - por exemplo, se a entrada é 123, a saída é 321.
+Zeros à esquerda não devem ser mostrados, então se a entrada é 180 a saída é 81. Atenção: os
+dígitos não devem ser informados separadamente.*/
+
+#include <stdio.h>
+
+int main()
+{
+    int num;
+    printf("Insira um numero de 3 digitos: \n");
+    scanf("%d", &num);
+
+    int centena, dezena, unidade;
+    centena = num/100;
+    dezena = (num%100)/10;
+    unidade = (num%10);
+
+    printf("%d", (unidade*100+dezena*10+centena));
+
+    return 0;
+}
