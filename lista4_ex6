@@ -1,0 +1,42 @@
+/*Ainda considerando o seu trabalho com caixas eletrônicos, você deve escrever
+um programa que recebe um número de conta-corrente com três dígitos e mostra o seu dígito
+verificador. O dígito verificador é calculado da seguinte forma (utilizando o número 235 como
+exemplo):
+Some o número da conta com o mesmo número com os dígitos invertidos. Exemplo: 235 + 532 = 767.
+Se a soma anterior for maior ou igual a 1000, desconsidere o milhar.
+Separe os 3 dígitos do número resultante, multiplicando a centena por 1, a dezena por 2, e a unidade
+por 3. Some os 3 valores. Exemplo: 7 (posição 1), 6 (posição 2) e 7 (posição 3): (7 x 1) + (6 x 2) + (7 x
+3) = 7 + 12 + 21 = 40.
+O último dígito desse resultado é o dígito verificador da conta. Exemplo: 0.*/
+
+#include <stdio.h>
+
+int main ()
+{
+    int conta;
+    printf("Insira um numero de 3 digitos: \n");
+    scanf("%d", &conta);
+
+    int centena, dezena, unidade;
+    centena = conta/100;
+    dezena = (conta%100)/10;
+    unidade = (conta%10);
+
+    int invert = (unidade*100+dezena*10+centena);
+    int aux = conta+invert;
+
+    if (aux>=1000)
+        aux = aux-1000;
+
+    centena = aux/100;
+    dezena = (aux%100)/10;
+    unidade = (aux%10);
+
+    int fim = centena*1+dezena*2+unidade*3;
+
+    unidade = (fim%10);
+
+    printf("%d", unidade);
+
+    return 0;
+}
