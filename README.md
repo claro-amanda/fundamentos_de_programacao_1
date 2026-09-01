@@ -1,7 +1,9 @@
 # fundamentos_de_programacao_1
 Listas de exercícios em linguagem C - Bacharelado em Sistemas de Informação - 1º período.
 
+
 LISTAS DE EXERCÍCIOS:
+
 
 AULA 3:
 
@@ -14,6 +16,7 @@ lista3_ex3: Utiliza estruturas condicionais para identificar o maior entre três
 lista3_ex4: Calcula a duração de um jogo a partir dos horários de início e fim, posteriormente, incluindo os minutos.
 
 lista3_ex6: Determina o quadrante ou a posição de um ponto no plano cartesiano a partir de suas coordenadas.
+
 
 
 AULA 4:
