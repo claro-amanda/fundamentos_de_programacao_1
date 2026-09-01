@@ -1,0 +1,35 @@
+/*Escreva um programa que recebe o preço do litro de álcool, o preço do litro de gasolina e os
+quilômetros por litro que um carro bicombustível realiza com cada um desses combustíveis. O
+programa deve informar se é mais econômico abastecer os carros da CTT com álcool ou com
+gasolina. No caso de não haver diferença de custo entre abastecer com álcool ou gasolina, a CTT
+prefere utilizar gasolina.*/
+
+#include <stdio.h>
+
+int main()
+{
+    double preco_g, preco_a, rendimento_g, rendimento_a;
+
+    printf("Insira o preco do litro da gasolina: \n");
+    scanf("%lf", &preco_g);
+
+    printf("Insira o rendimento em km por litro da gasolina: \n");
+    scanf("%lf", &rendimento_g);
+
+    printf("Insira o preco do litro do alcool: \n");
+    scanf("%lf", &preco_a);
+
+    printf("Insira o rendimento em km por litro do alcool: \n");
+    scanf("%lf", &rendimento_a);
+
+    if((rendimento_g/preco_g)>=(rendimento_a/preco_a))
+    {
+        printf("Eh mais economico abastecer os carros com gasolina. \n");
+    }
+    else
+    {
+        printf("Eh mais economico abastecer os carros com alcool. \n");
+    }
+
+    return 0;
+}
